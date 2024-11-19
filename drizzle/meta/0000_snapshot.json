@@ -1,0 +1,224 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "Estudiantes": {
+      "name": "Estudiantes",
+      "columns": {
+        "id_estudiante": {
+          "autoincrement": false,
+          "name": "id_estudiante",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "nombre": {
+          "autoincrement": false,
+          "name": "nombre",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "correo": {
+          "autoincrement": false,
+          "name": "correo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "grado": {
+          "autoincrement": false,
+          "name": "grado",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Profesores": {
+      "name": "Profesores",
+      "columns": {
+        "id_profesor": {
+          "autoincrement": false,
+          "name": "id_profesor",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "nombre": {
+          "autoincrement": false,
+          "name": "nombre",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "correo": {
+          "autoincrement": false,
+          "name": "correo",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Temas": {
+      "name": "Temas",
+      "columns": {
+        "id_tema": {
+          "autoincrement": false,
+          "name": "id_tema",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "preguntas": {
+          "autoincrement": false,
+          "name": "preguntas",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Respuestas_Fallidas": {
+      "name": "Respuestas_Fallidas",
+      "columns": {
+        "id_pregunta_fallida": {
+          "autoincrement": false,
+          "name": "id_pregunta_fallida",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "id_estudiante": {
+          "autoincrement": false,
+          "name": "id_estudiante",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id_pregunta": {
+          "autoincrement": false,
+          "name": "id_pregunta",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "id_tema": {
+          "autoincrement": false,
+          "name": "id_tema",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "Respuestas_Fallidas_id_tema_Temas_id_tema_fk": {
+          "name": "Respuestas_Fallidas_id_tema_Temas_id_tema_fk",
+          "tableFrom": "Respuestas_Fallidas",
+          "tableTo": "Temas",
+          "columnsFrom": [
+            "id_tema"
+          ],
+          "columnsTo": [
+            "id_tema"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Respuestas_Fallidas_id_pregunta_Preguntas_id_pregunta_fk": {
+          "name": "Respuestas_Fallidas_id_pregunta_Preguntas_id_pregunta_fk",
+          "tableFrom": "Respuestas_Fallidas",
+          "tableTo": "Preguntas",
+          "columnsFrom": [
+            "id_pregunta"
+          ],
+          "columnsTo": [
+            "id_pregunta"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "Respuestas_Fallidas_id_estudiante_Estudiantes_id_estudiante_fk": {
+          "name": "Respuestas_Fallidas_id_estudiante_Estudiantes_id_estudiante_fk",
+          "tableFrom": "Respuestas_Fallidas",
+          "tableTo": "Estudiantes",
+          "columnsFrom": [
+            "id_estudiante"
+          ],
+          "columnsTo": [
+            "id_estudiante"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    },
+    "Preguntas": {
+      "name": "Preguntas",
+      "columns": {
+        "id_pregunta": {
+          "autoincrement": true,
+          "name": "id_pregunta",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "enunciado": {
+          "autoincrement": false,
+          "name": "enunciado",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "opciones": {
+          "autoincrement": false,
+          "name": "opciones",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "respuesta_correcta": {
+          "autoincrement": false,
+          "name": "respuesta_correcta",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {},
+      "checkConstraints": {}
+    }
+  },
+  "views": {},
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}

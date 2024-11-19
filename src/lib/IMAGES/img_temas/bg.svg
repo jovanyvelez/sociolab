@@ -1,0 +1,27 @@
+<svg width="982" height="1143" viewBox="0 0 982 1143" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 45.3572C0 20.3071 20.3071 0 45.3571 0H982V1104.03C982 1125.55 964.553 1143 943.032 1143V1143C422.21 1143 0 720.79 0 199.968V45.3572Z" fill="#932699"/>
+</svg>
+<!--
+
+
+1. **`<svg>` Elemento**: Este es el contenedor principal de todo el gráfico SVG.
+   - `width`: Especifica el ancho del lienzo SVG en píxeles.
+   - `height`: Especifica la altura del lienzo SVG en píxeles.
+   - `viewBox`: Define la región visible del SVG. En este caso, va desde el punto (0,0) hasta (982,1143).
+   - `fill`: Establece el color de relleno predeterminado para las formas en el SVG.
+
+2. **`<path>` Elemento**: Define una forma vectorial utilizando comandos y coordenadas.
+   - `d`: Atributo que define la forma de la ruta utilizando comandos de trazado y coordenadas.
+     - `M`: Mueve el lápiz a la coordenada especificada sin trazar una línea.
+     - `C`: Curva de Bézier cúbica.
+   - `fill`: Establece el color de relleno de la forma.
+
+- Comienza en el punto (0, 45.3572).
+- Luego, curva hacia arriba y a la izquierda con la curva de Bézier cúbica (0, 20.3071), (20.3071, 0), y (45.3571, 0).
+- Luego, traza una línea horizontalmente a lo largo de la parte superior del SVG hasta la coordenada x = 982.
+- Después, curva hacia abajo y a la izquierda con la curva de Bézier cúbica (982, 1124.03), (964.553, 1143), y (943.032, 1143).
+- Trasa una línea verticalmente hacia abajo hasta la coordenada y = 1143.
+- Luego, curva hacia abajo y a la derecha con la curva de Bézier cúbica (422.21, 1143), (0, 720.79), y (0, 199.968).
+- Finalmente, traza una línea hasta el punto inicial para cerrar la forma.
+
+Espero que esta documentación te ayude a comprender mejor el código SVG.-->
